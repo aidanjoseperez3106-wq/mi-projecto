@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Top Productos - Amazon Best Sellers</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f6f7fb;color:#111;padding:24px}
+    .container{max-width:1100px;margin:0 auto}
+    h1{margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);display:flex;flex-direction:column}
+    .thumb{width:100%;height:180px;object-fit:contain;margin-bottom:10px}
+    .title{font-weight:600;margin-bottom:8px}
+    .price{color:#b12704;font-weight:700}
+    .btn{margin-top:auto;padding:10px;text-align:center;background:#ff9900;color:#000;font-weight:700;border:none;border-radius:8px;text-decoration:none}
+    footer{margin-top:24px;font-size:0.9rem;color:#555}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Top Productos — Amazon Best Sellers (Ejemplo)</h1>
+    <div id="products" class="grid"></div>
+    <footer>
+      <p>Datos de “Top Selling Products” de Amazon USA, mayo-julio 2025  [oai_citation:0‡Accio](https://www.accio.com/business/amazon-us-best-seller?utm_source=chatgpt.com)</p>
+      <p>Este es un ejemplo. Para convertirlo en sitio de afiliados real, sigue las instrucciones abajo.</p>
+    </footer>
+  </div>
+
+  <script>
+    const products = [
+      { title: "Amazon Basics Printer Paper (20 lb)", price: "$40 M mensual", image: "https://m.media-amazon.com/images/I/71d1tgKm7KL._AC_UL320_.jpg", link: "#" },
+      { title: "Apple 2025 MacBook Air 13″", price: "$28 M mensual", image: "https://m.media-amazon.com/images/I/71k3LYoG5-L._AC_UL320_.jpg", link: "#" },
+      { title: "Brampton Monaco Patio Dining Set", price: "$25 M mensual", image: "https://m.media-amazon.com/images/I/81aYBvku6ML._AC_UL320_.jpg", link: "#" },
+      { title: "Apple Watch Series 10", price: "$18 M mensual", image: "https://m.media-amazon.com/images/I/71WfEwMgd3L._AC_UL320_.jpg", link: "#" },
+      { title: "Nespresso Vertuo Coffee Pods", price: "$16 M mensual", image: "https://m.media-amazon.com/images/I/81vR5w5EarL._AC_UL320_.jpg", link: "#" },
+      { title: "LMNT Zero Sugar Electrolytes", price: "$15 M mensual", image: "https://m.media-amazon.com/images/I/61IXl+4JlLL._AC_UL320_.jpg", link: "#" }
+    ];
+
+    const container = document.getElementById("products");
+    products.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.title}" class="thumb">
+        <div class="title">${p.title}</div>
+        <div class="price">${p.price}</div>
+        <a href="${p.link}" class="btn" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
